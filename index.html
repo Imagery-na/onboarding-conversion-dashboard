@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifecycle - Onboarding Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Onboarding Conversion</h1>
+        </header>
+
+        <!-- Filters Panel -->
+        <section class="filters-panel">
+            <div class="filters-row">
+                <div class="filter-group">
+                    <label>Time Period</label>
+                    <select id="timePeriod" class="filter-select">
+                        <option value="last7days">Last 7 Days</option>
+                        <option value="last30days" selected>Last 30 Days</option>
+                        <option value="last90days">Last 90 Days</option>
+                        <option value="monthly">Monthly View</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Country</label>
+                    <div class="custom-multiselect" data-filter-id="country">
+                        <div class="multiselect-trigger">
+                            <div class="multiselect-selected">
+                                <span class="placeholder">Select countries...</span>
+                            </div>
+                            <span class="multiselect-arrow">▼</span>
+                        </div>
+                        <div class="multiselect-dropdown">
+                            <div class="multiselect-search">
+                                <input type="text" placeholder="Search..." class="search-input">
+                            </div>
+                            <div class="multiselect-options">
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="all" class="option-checkbox">
+                                    <span>All</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="DE" class="option-checkbox">
+                                    <span>DE</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="FR" class="option-checkbox">
+                                    <span>FR</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="IT" class="option-checkbox">
+                                    <span>IT</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="NL" class="option-checkbox">
+                                    <span>NL</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="ES" class="option-checkbox">
+                                    <span>ES</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="BE" class="option-checkbox">
+                                    <span>BE</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Business Type</label>
+                    <div class="custom-multiselect" data-filter-id="businessType">
+                        <div class="multiselect-trigger">
+                            <div class="multiselect-selected">
+                                <span class="placeholder">Select business types...</span>
+                            </div>
+                            <span class="multiselect-arrow">▼</span>
+                        </div>
+                        <div class="multiselect-dropdown">
+                            <div class="multiselect-search">
+                                <input type="text" placeholder="Search..." class="search-input">
+                            </div>
+                            <div class="multiselect-options">
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="all" class="option-checkbox">
+                                    <span>All</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="company" class="option-checkbox">
+                                    <span>Company</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="freelancer" class="option-checkbox">
+                                    <span>Freelancer</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="gbr" class="option-checkbox">
+                                    <span>GbR</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="underReg" class="option-checkbox">
+                                    <span>Under reg company</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Pricing Plan</label>
+                    <div class="custom-multiselect" data-filter-id="pricingPlan">
+                        <div class="multiselect-trigger">
+                            <div class="multiselect-selected">
+                                <span class="placeholder">Select pricing plans...</span>
+                            </div>
+                            <span class="multiselect-arrow">▼</span>
+                        </div>
+                        <div class="multiselect-dropdown">
+                            <div class="multiselect-search">
+                                <input type="text" placeholder="Search..." class="search-input">
+                            </div>
+                            <div class="multiselect-options">
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="all" class="option-checkbox">
+                                    <span>All</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="free" class="option-checkbox">
+                                    <span>Free</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="starter" class="option-checkbox">
+                                    <span>Starter</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="professional" class="option-checkbox">
+                                    <span>Professional</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="enterprise" class="option-checkbox">
+                                    <span>Enterprise</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Platform</label>
+                    <div class="custom-multiselect" data-filter-id="platform">
+                        <div class="multiselect-trigger">
+                            <div class="multiselect-selected">
+                                <span class="placeholder">Select platforms...</span>
+                            </div>
+                            <span class="multiselect-arrow">▼</span>
+                        </div>
+                        <div class="multiselect-dropdown">
+                            <div class="multiselect-search">
+                                <input type="text" placeholder="Search..." class="search-input">
+                            </div>
+                            <div class="multiselect-options">
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="all" class="option-checkbox">
+                                    <span>All</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="mobile-app" class="option-checkbox">
+                                    <span>Mobile app</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="mobile-web" class="option-checkbox">
+                                    <span>Mobile web</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="desktop-web" class="option-checkbox">
+                                    <span>Desktop web</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>OS</label>
+                    <div class="custom-multiselect" data-filter-id="os">
+                        <div class="multiselect-trigger">
+                            <div class="multiselect-selected">
+                                <span class="placeholder">Select OS...</span>
+                            </div>
+                            <span class="multiselect-arrow">▼</span>
+                        </div>
+                        <div class="multiselect-dropdown">
+                            <div class="multiselect-search">
+                                <input type="text" placeholder="Search..." class="search-input">
+                            </div>
+                            <div class="multiselect-options">
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="all" class="option-checkbox">
+                                    <span>All</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="android" class="option-checkbox">
+                                    <span>Android</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="ios" class="option-checkbox">
+                                    <span>iOS</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="macos" class="option-checkbox">
+                                    <span>MacOS</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="windows" class="option-checkbox">
+                                    <span>Windows</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="linux" class="option-checkbox">
+                                    <span>Linux</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="other" class="option-checkbox">
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Marketing Source</label>
+                    <div class="custom-multiselect" data-filter-id="marketingSource">
+                        <div class="multiselect-trigger">
+                            <div class="multiselect-selected">
+                                <span class="placeholder">Select sources...</span>
+                            </div>
+                            <span class="multiselect-arrow">▼</span>
+                        </div>
+                        <div class="multiselect-dropdown">
+                            <div class="multiselect-search">
+                                <input type="text" placeholder="Search..." class="search-input">
+                            </div>
+                            <div class="multiselect-options">
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="all" class="option-checkbox">
+                                    <span>All</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="none" class="option-checkbox">
+                                    <span>None</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="google" class="option-checkbox">
+                                    <span>Google</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="financeads" class="option-checkbox">
+                                    <span>Financeads</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="facebook" class="option-checkbox">
+                                    <span>Facebook</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Marketing Campaign</label>
+                    <div class="custom-multiselect" data-filter-id="marketingCampaign">
+                        <div class="multiselect-trigger">
+                            <div class="multiselect-selected">
+                                <span class="placeholder">Select campaigns...</span>
+                            </div>
+                            <span class="multiselect-arrow">▼</span>
+                        </div>
+                        <div class="multiselect-dropdown">
+                            <div class="multiselect-search">
+                                <input type="text" placeholder="Search..." class="search-input">
+                            </div>
+                            <div class="multiselect-options">
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="all" class="option-checkbox">
+                                    <span>All</span>
+                                </label>
+                                <label class="multiselect-option">
+                                    <input type="checkbox" value="search-tofu-banking-brand-fr-france-10216289250" class="option-checkbox">
+                                    <span>search-tofu-banking-brand-fr-france-10216289250</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="advanced-filters-toggle">
+                <button id="advancedFiltersToggle" class="btn-link">Advanced Filters +</button>
+            </div>
+
+            <div id="advancedFilters" class="advanced-filters hidden">
+                <div class="filters-row">
+                    <div class="filter-group">
+                        <label>Legal Form</label>
+                        <div class="custom-multiselect" data-filter-id="legalForm">
+                            <div class="multiselect-trigger">
+                                <div class="multiselect-selected">
+                                    <span class="placeholder">Select legal forms...</span>
+                                </div>
+                                <span class="multiselect-arrow">▼</span>
+                            </div>
+                            <div class="multiselect-dropdown">
+                                <div class="multiselect-search">
+                                    <input type="text" placeholder="Search..." class="search-input">
+                                </div>
+                                <div class="multiselect-options">
+                                    <label class="multiselect-option">
+                                        <input type="checkbox" value="all" class="option-checkbox">
+                                        <span>All</span>
+                                    </label>
+                                    <label class="multiselect-option">
+                                        <input type="checkbox" value="gmbh" class="option-checkbox">
+                                        <span>GmbH</span>
+                                    </label>
+                                    <label class="multiselect-option">
+                                        <input type="checkbox" value="ug" class="option-checkbox">
+                                        <span>UG</span>
+                                    </label>
+                                    <label class="multiselect-option">
+                                        <input type="checkbox" value="ag" class="option-checkbox">
+                                        <span>AG</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Corporate</label>
+                        <select id="corporate" class="filter-select">
+                            <option value="all">All</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Complex</label>
+                        <select id="complex" class="filter-select">
+                            <option value="all">All</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Re-onboarded</label>
+                        <select id="reOnboarded" class="filter-select">
+                            <option value="all">All</option>
+                            <option value="none">None</option>
+                            <option value="treezor">Treezor</option>
+                            <option value="solaris">Solaris</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>IP Country</label>
+                        <div class="custom-multiselect" data-filter-id="ipCountry">
+                            <div class="multiselect-trigger">
+                                <div class="multiselect-selected">
+                                    <span class="placeholder">Select IP countries...</span>
+                                </div>
+                                <span class="multiselect-arrow">▼</span>
+                            </div>
+                            <div class="multiselect-dropdown">
+                                <div class="multiselect-search">
+                                    <input type="text" placeholder="Search..." class="search-input">
+                                </div>
+                                <div class="multiselect-options">
+                                    <label class="multiselect-option">
+                                        <input type="checkbox" value="all" class="option-checkbox">
+                                        <span>All</span>
+                                    </label>
+                                    <label class="multiselect-option">
+                                        <input type="checkbox" value="DE" class="option-checkbox">
+                                        <span>DE</span>
+                                    </label>
+                                    <label class="multiselect-option">
+                                        <input type="checkbox" value="FR" class="option-checkbox">
+                                        <span>FR</span>
+                                    </label>
+                                    <label class="multiselect-option">
+                                        <input type="checkbox" value="IT" class="option-checkbox">
+                                        <span>IT</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Account Declined</label>
+                        <select id="accountDeclined" class="filter-select">
+                            <option value="all">All</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Multicompany</label>
+                        <select id="multicompany" class="filter-select">
+                            <option value="all">All</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Section -->
+        <section class="kpi-section">
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span>CR last week</span>
+                </div>
+                <div class="kpi-value" id="crLastWeek">55%</div>
+                <div class="kpi-delta positive">+4% from average</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span>Users Onboarded</span>
+                </div>
+                <div class="kpi-value" id="usersOnboarded">616</div>
+                <div class="kpi-delta positive">+54 from average</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-metric">
+                    <div class="kpi-header">
+                        <span>TTA</span>
+                    </div>
+                    <div class="kpi-value">15 min</div>
+                    <div class="kpi-delta negative">-4min from average</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Table -->
+        <section class="table-section">
+            <div class="table-header">
+                <h2>Onboarding Steps</h2>
+            </div>
+            <div class="table-container">
+                <table id="onboardingTable" class="onboarding-table">
+                    <thead>
+                        <tr>
+                            <th class="step-column">Step</th>
+                            <th class="data-column">This week</th>
+                            <th class="data-column">Average</th>
+                            <th class="data-column">11.05 - 17.05</th>
+                            <th class="data-column">18.05 - 24.05</th>
+                            <th class="data-column">25.05 - 31.05</th>
+                            <th class="data-column">01.06 - 07.06</th>
+                            <th class="data-column">08.06 - 14.06</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Table rows will be generated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
